@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby version
+  - 3.2.2
 
-Things you may want to cover:
+- System dependencies
+  - docker
+  - postgresql
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- How to install & run dev server
+  1. `git clone git@github.com:chee-se/rails-docker.git`
+  1. `docker-compose run --rm web rails db:setup`
+  1. `docker-compose up -d`
+  1. Access to http://localhost:3000/
