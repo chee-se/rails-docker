@@ -1,0 +1,25 @@
+
+services:
+
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+    volumes:
+      - .:/rails:cached
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - pg_datastore:/var/lib/postgresql/data/
+
+volumes:
+  pg_datastore:
